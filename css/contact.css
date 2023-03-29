@@ -1,0 +1,5 @@
+body { /* THESE RULES ARE EVALUATED FROM TOP TO BOTTOM, IF EVALUATING AN UNCOMPATIBLE RULE USE LAST COMPATIBLE RULE*/
+    background: #000428; /* for even older browsers, just give a basic background*/
+    background: -webkit-linear-gradient(to right, #004e92, #000428); /* -webkit for older browsers*/
+    background: linear-gradient(to right, #004e92, #000428); /* direction is optional, default is top to bottom, this is the newest version of this property */
+}
