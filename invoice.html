@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/site.css" />
   </head>
   <body>
-    <header class="">
+    <header class="d-print-none">
       <!-- increase or decrease white space above invoice here-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -55,58 +55,64 @@
         </div>
       </nav>
     </header>
-    <main class="container">
-      <div class="row">
-        <div class="col text-end">
-          <button class="btn btn-dark">Print this page</button>
-        </div>
+    <main class="container mt-4">
+      <div class="text-end d-print-none">
+        <button class="btn btn-dark" onclick="window.print()">Print this page</button>
       </div>
-      <div class="row border">
-        <div class="col-12 col-md-8">
+      <div class="row border align-items-center">
+        <!-- row class already has d-flex as a property/attribute-->
+        <div class="col-12 col-md-7">
           <img
             src="/img/IdeaFoundryLogo.svg"
             alt="Idea Foundry Logo"
             class="img-fluid"
           />
         </div>
-        <div
-          class="col-12 col-md-4 d-flex justify-content-end align-items-center"
-        >
-          <b>Customer:</b>&nbsp4908
+        <div class="col-12 col-md-5 text-end">
+          <strong>Customer:</strong>&nbsp;4908
+          <!-- strong tag is also usable, helps with screen readers, <b> tag doesnt help accessibility-->
         </div>
       </div>
       <div class="row border-start border-end">
-        <div class="col-12 col-md-6"><b>Date:</b> 05/12/2019</div>
-        <div class="col-12 col-md-6 text-md-end"><b>Invoice No:</b> 19005</div>
+        <div class="col-12 col-md-6">
+          <strong>Date:</strong>&nbsp;05/12/2019
+          <!-- add &nbsp; for a whitespace, spaces can sometimes not be recognized with some browsers depending on the circumstances-->
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <strong>Invoice No:</strong>&nbsp;19005
+        </div>
       </div>
-      <div class="row border-top border-start border-end">
-        <div class="col-6">
-          <b>Invoice To:</b>
+      <div class="row row-cols-2 border-top border-start border-end">
+        <div class="col">
+          <strong>Invoice To:</strong>
         </div>
-        <div class="col-6 text-end">
-          <b>Pay To:</b>
+        <div class="col text-end">
+          <strong>Pay To:</strong>
         </div>
-        <address class="col-6">
-          Mark Davis<br />3333 Al Davis Way<br />Las Vegas, NV 89118
+        <address class="col">
+          Mark Davis<br />
+          3333 Al Davis Way<br />
+          Las Vegas, NV 89118
         </address>
-        <address class="col-6 text-end">
-          Idea Foundry, Inc.<br />2705 N. Enterprise St<br />Kernersville, NC
-          27284
+        <address class="col text-end">
+          Idea Foundry, Inc.<br />
+          2705 N. Enterprise St<br />
+          Kernersville, NC 27284
         </address>
       </div>
       <div class="row table-responsive">
         <table class="table table-striped table-bordered">
-          <thead>
-            <tr class="bg-dark text-light">
-              <th scope="col">Service</th>
-              <th scope="col">Description</th>
-              <th scope="col">Rate</th>
-              <th scope="col">QTY</th>
-              <th scope="col" class="text-end">Amount</th>
+          <thead class="table-dark">
+            <tr>
+              <th>Service</th>
+              <th>Description</th>
+              <th>Rate</th>
+              <th>QTY</th>
+              <th class="text-end">Amount</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-secondary-subtle">
+            <tr>
               <td>Design</td>
               <td>Website Design</td>
               <td>$60.00</td>
@@ -120,7 +126,7 @@
               <td>10</td>
               <td class="text-end">$1500.00</td>
             </tr>
-            <tr class="bg-secondary-subtle">
+            <tr>
               <td>Deployment</td>
               <td>Deployment and Hosting</td>
               <td>$450.00</td>
@@ -145,8 +151,8 @@
         </table>
       </div>
       <div>
-        <b>NOTE:</b> This is a computer generated receipt and does not require a
-        physical signature.
+        <strong>NOTE:</strong> This is a computer generated receipt and does not
+        require a physical signature.
       </div>
     </main>
     <footer>
